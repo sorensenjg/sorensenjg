@@ -1,21 +1,26 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-tinacms-demo.netlify.com/`,
+    title: `Justin Sorensen`,
+    author: `Justin Sorensen`,
+    description: ``,
+    siteUrl: `https://sorensenjg.com`,
     social: {
-      twitter: `kylemathews`,
+      github: `sorensenjg`,
+      twitter: `sorensenjg`,
     },
   },
   plugins: [
     {
       resolve: "gatsby-plugin-tinacms",
       options: {
-        plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark", "gatsby-tinacms-json",],
+        plugins: [
+          "gatsby-tinacms-git",
+          "gatsby-tinacms-remark",
+          "gatsby-tinacms-json",
+        ],
         sidebar: {
           hidden: process.env.NODE_ENV === "production",
-          position: "displace"
+          position: "displace",
         },
       },
     },
@@ -68,7 +73,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-60892318-3`,
       },
     },
     `gatsby-plugin-feed`,
@@ -79,7 +84,7 @@ module.exports = {
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#f95542`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },

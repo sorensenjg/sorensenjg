@@ -22,9 +22,9 @@ const Bio = () => {
    */
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/avatar.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 50, height: 50, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -34,7 +34,12 @@ const Bio = () => {
         author
         description
         siteUrl
+        contact {
+          email
+          phone
+        }
         social {
+          github
           twitter
         }
         ###############
@@ -52,15 +57,29 @@ const Bio = () => {
    * Then checkout `useGlobalJsonForm`
    */
 
-  const [{ author, social }] = useLocalJsonForm(data.author, {
-    label: "Author bio",
+  const [{ author, contact, social }] = useLocalJsonForm(data.author, {
+    label: "Author Bio",
     fields: [
-      { name: 'rawJson.author' , label: "Author Name", component: "text" },
-      
-      { name: 'rawJson.social', label: 'Social Info', component: 'group', fields: [
-        {label: "@Twitter", name: "twitter", component: "text"}
-      ]}
-    ]
+      { name: "rawJson.author", label: "Author Name", component: "text" },
+      {
+        name: "rawJson.contact",
+        label: "Contact Info",
+        component: "group",
+        fields: [
+          { label: "Email", name: "email", component: "text" },
+          { label: "Phone", name: "phone", component: "text" },
+        ],
+      },
+      {
+        name: "rawJson.social",
+        label: "Social Info",
+        component: "group",
+        fields: [
+          { label: "@GitHub", name: "github", component: "text" },
+          { label: "@Twitter", name: "twitter", component: "text" },
+        ],
+      },
+    ],
   })
   // const [{ name, social }] = useGlobalJsonForm(data.author, {
   //   label: "Author",
@@ -74,7 +93,7 @@ const Bio = () => {
         marginBottom: rhythm(2.5),
       }}
     >
-     <Image
+      <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
         style={{
@@ -87,14 +106,34 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author}</strong> who lives and works in Canada
-        building useful things.
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
+      <div>
+        <p>
+          I'm <strong>{author}</strong>, a web developer at{" "}
+          <a
+            href="https://www.dystrick.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            dystrick
+          </a>
+          , who lives and works in the Silicon Valley. I'm passionate about
+          cutting edge web tech, great design and UX, and performance. When I'm
+          not working you can find me in the Sierra Nevada mountains... camping,
+          fishing, and off-roading with my family and friends.
+        </p>
+        <p>
+          You can contact me by email{" "}
+          <a href={`mailto:${contact.email}`}>{contact.email}</a> <br />
+          or follow me at{" "}
+          <a
+            href={`https://github.com/${social.github}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </p>
+      </div>
     </div>
   )
 }
