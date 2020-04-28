@@ -3,11 +3,11 @@ title: React Alert Dialog
 date: '2020-04-28T19:46:28.690Z'
 description: ''
 ---
-Uses:
+### Uses:
 
 React hooks + context + Promise to provide a reusable dialog.
 
-Example: 
+### Example:
 
     const YourAwesomeComponent = () => {
       const confirm = useConfirmation()
@@ -21,6 +21,6 @@ Example:
       });
     }
 
-Source: 
+### Source:
 
 [https://dev.to/dmtrkovalenko/the-neatest-way-to-handle-alert-dialogs-in-react-1aoe](https://dev.to/dmtrkovalenko/the-neatest-way-to-handle-alert-dialogs-in-react-1aoe "https://dev.to/dmtrkovalenko/the-neatest-way-to-handle-alert-dialogs-in-react-1aoe")
