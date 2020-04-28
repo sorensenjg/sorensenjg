@@ -1,20 +1,22 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   siteMetadata: {
-    title: `sorensenjg`,
-    author: `Justin`,
-    about: `I'm a web developer based in California, passionate about cutting edge web technology, and optimizing performance. When I'm not coding you can find me in the Sierras... camping, fishing, and off-roading with my family and friends.`,
-    description: ``,
-    siteUrl: `https://storyhub-minimal-tarex.redq.now.sh`,
+    title: `Gatsby Starter Blog`,
+    author: `Kyle Mathews`,
+    description: `A starter blog demonstrating what Gatsby can do.`,
+    siteUrl: `https://gatsby-starter-tinacms-demo.netlify.com/`,
+    social: {
+      twitter: `kylemathews`,
+    },
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: "gatsby-plugin-tinacms",
       options: {
-        minify: false, // Breaks styles if not set to false
+        plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark", "gatsby-tinacms-json",],
+        sidebar: {
+          hidden: process.env.NODE_ENV === "production",
+          position: "displace"
+        },
       },
     },
     {
@@ -32,6 +34,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/data`,
+        name: `data`,
+      },
+    },
+    `gatsby-transformer-json`,
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -39,7 +49,6 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
-              linkImagesToOriginal: true,
             },
           },
           {
@@ -48,84 +57,39 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          {
-            resolve: `gatsby-remark-katex`,
-            options: {
-              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
-              strict: `ignore`,
-            },
-          },
-          {
-            resolve: `gatsby-remark-mermaid`,
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-          },
-
-          {
-            resolve: `gatsby-remark-copy-linked-files`,
-          },
-          {
-            resolve: `gatsby-remark-smartypants`,
-          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
         ],
       },
     },
-    {
-      resolve: `gatsby-transformer-sharp`,
-    },
-    {
-      resolve: `gatsby-plugin-sharp`,
-    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    {
-      resolve: `gatsby-plugin-feed`,
-    },
+    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `sorensenjg`,
-        short_name: `sorensenjg`,
+        name: `Gatsby Starter Blog`,
+        short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/favicon.png`,
+        icon: `content/assets/gatsby-icon.png`,
       },
     },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-offline`,
-    },
-    {
-      resolve: `gatsby-plugin-react-helmet`,
-    },
-    {
-      resolve: `gatsby-plugin-typescript`,
-    },
-    {
-      resolve: `gatsby-plugin-lodash`,
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-typography`,
       options: {
-        fonts: [
-          {
-            family: `Poppins`,
-            variants: [`300`, `400`, `500`, `600`, `700`],
-          },
-          {
-            family: `Fira Sans`,
-            variants: [`100`, `300`, `400`, `500`, `600`, `700`],
-          },
-        ],
+        pathToConfigModule: `src/utils/typography`,
       },
     },
   ],
