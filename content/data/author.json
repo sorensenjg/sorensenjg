@@ -6,5 +6,8 @@
   "siteUrl": "https://gatsby-starter-tinacms-demo.netlify.com/",
   "social": {
     "twitter": "sorensenjg"
+  },
+  "contact": {
+    "email": "hey@sorensenjg.com"
   }
 }
