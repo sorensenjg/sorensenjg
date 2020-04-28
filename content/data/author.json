@@ -5,7 +5,8 @@
   "description": "A starter blog demonstrating what Gatsby & Tina can do.",
   "siteUrl": "https://gatsby-starter-tinacms-demo.netlify.com/",
   "social": {
-    "twitter": "sorensenjg"
+    "twitter": "sorensenjg",
+    "github": "sorensenjg"
   },
   "contact": {
     "email": "hey@sorensenjg.com"
