@@ -8,3 +8,15 @@ description: >-
   mauris eu ante proin condimentum himenaeos elementum ac et amet magna per at a
   rhoncus urna eu. 
 ---
+    const YourAwesomeComponent = () => {
+      const confirm = useConfirmation()
+    
+      confirm({
+        variant: "danger",
+        title: "Are you sure you want to remove this burrito?",
+        description: "If you will remove this burrito you will regret it 😡!!"
+      }).then(() => {
+        api.deleteThisAwfulBurrito();
+      });
+    }
+    
