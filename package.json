@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-tinacms",
+  "name": "sorensenjg",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown, made editable with TinaCMS",
+  "description": "",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Justin Sorensen <sorensenjg@gmail.com>",
   "bugs": {
     "url": "https://github.com/tinacms/gatsby-starter-tinacms/issues"
   },

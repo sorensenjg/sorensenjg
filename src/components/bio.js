@@ -108,7 +108,7 @@ const Bio = () => {
       />
       <div>
         <p>
-          I'm <strong>{author}</strong>, a web developer at{" "}
+          I'm a web developer at{" "}
           <a
             href="https://www.dystrick.com"
             target="_blank"
