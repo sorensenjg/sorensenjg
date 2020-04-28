@@ -14,7 +14,7 @@ import { rhythm } from "../utils/typography"
 /**
  * STEP 1: Import the json hooks
  */
-import { useLocalJsonForm, useGlobalJsonForm } from "gatsby-tinacms-json"
+import { useLocalJsonForm } from "gatsby-tinacms-json"
 
 const Bio = () => {
   /**
