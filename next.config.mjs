@@ -13,6 +13,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'assets.tina.io',
+      },
+      {
+        protocol: 'https',
         hostname: 'picsum.photos',
       },
     ],
