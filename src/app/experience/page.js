@@ -33,7 +33,7 @@ function Experience({ experience }) {
             </Card.Description>
             {experience.location && (
               <Card.Eyebrow
-                className="order-none !mb-0 !mt-0 !text-zinc-600 dark:!text-zinc-400"
+                className="!order-none !mb-0 !mt-0 !text-zinc-600 dark:!text-zinc-400"
                 decorate
               >
                 {experience.location}
