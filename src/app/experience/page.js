@@ -2,6 +2,7 @@ import client from "@/tina";
 import Image from "next/image";
 import dayjs from "dayjs";
 import { Card } from "@/components/card";
+import { Section } from "@/components/section";
 import { SimpleLayout } from "@/components/simple-layout";
 import { Prose } from "@/components/prose";
 import { TinaMarkdown } from "@/components/tina-markdown";
@@ -10,6 +11,67 @@ export const metadata = {
   title: "Experience | Justin Sorensen",
   description: "Highlighting my notable gigs in the professional arena.",
 };
+
+function ToolsSection({ children, ...props }) {
+  return (
+    <Section {...props}>
+      <ul role="list" className="space-y-2">
+        {children}
+      </ul>
+    </Section>
+  );
+}
+
+function Tool({ title, href, children }) {
+  return (
+    <Card as="li">
+      <Card.Title as="h3" href={href}>
+        {title}
+      </Card.Title>
+      <Card.Description>{children}</Card.Description>
+    </Card>
+  );
+}
+
+function Skills() {
+  return (
+    <div className="space-y-20">
+      <ToolsSection title="Languages">
+        {/* Industry Knowledge: HTML, CSS, Javascript, State Management,
+        Object-Relational Mapping (ORM), Accessibility, Graphic Design,
+        Pre-press, Packaging Design, Screen Printing, Large Format Printing,
+        Maintenance and Repair */}
+        <Tool title="HTML"></Tool>
+        <Tool title="CSS"></Tool>
+        <Tool title="JavaScript"></Tool>
+        <Tool title="PHP"></Tool>
+      </ToolsSection>
+      <ToolsSection title="Concepts">
+        <Tool title="SEO"></Tool>
+        <Tool title="Accessibility"></Tool>
+        <Tool title="State management"></Tool>
+        <Tool title="Object-relational mapping (ORM)"></Tool>
+      </ToolsSection>
+      <ToolsSection title="Frameworks">
+        <Tool title="React"></Tool>
+        <Tool title="Next.js"></Tool>
+        <Tool title="Gatsby.js"></Tool>
+        <Tool title="Prisma"></Tool>
+      </ToolsSection>
+      <ToolsSection title="Design">
+        <Tool title="Photoshop"></Tool>
+        <Tool title="Illustrator"></Tool>
+        <Tool title="Pre-press"></Tool>
+        <Tool title="Packaging design"></Tool>
+        <Tool title="Large format printing"></Tool>
+        <Tool title="Screen printing"></Tool>
+      </ToolsSection>
+      <ToolsSection title="Soft skills">
+        <Tool title="Leadership"></Tool>
+      </ToolsSection>
+    </div>
+  );
+}
 
 function Experience({ experience }) {
   return (
@@ -94,6 +156,20 @@ export default async function ExperiencePage() {
           ))}
         </div>
       </div>
+      {/* <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+        <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40 flex flex-col gap-16">
+          <div className="flex max-w-3xl flex-col space-y-16">
+            <h2>Experience</h2>
+            {experiences.map((experience, index) => (
+              <Experience key={index} experience={experience} />
+            ))}
+          </div>
+        </div>
+        <div className="space-y-10">
+          <h2>Skills</h2>
+          <Skills />
+        </div>
+      </div> */}
     </SimpleLayout>
   );
 }

@@ -6,7 +6,7 @@ import { SimpleLayout } from "@/components/simple-layout";
 export const metadata = {
   title: "Snippets | Justin Sorensen",
   description:
-    "A collection of useful snippets I&rsquo;ve collected. Some original, and some sourced.",
+    "Useful snippets I&rsquo;ve collected. Some original, and some sourced.",
 };
 
 function Snippet({ snippet }) {
@@ -45,7 +45,7 @@ export default async function SnippetsPage() {
 
   return (
     <SimpleLayout
-      title="A collection of useful snippets I&rsquo;ve collected. Some original, and some sourced."
+      title="Useful snippets I&rsquo;ve collected. Some original, and some sourced."
       // intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
