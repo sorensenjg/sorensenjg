@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import { classNames } from "@/lib/utils";
 import { Header } from "@/components/header";
@@ -33,6 +34,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html className="h-full antialiased" lang="en">
+      {/* Google tag (gtag.js) */}
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-CFW0D670WX" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-CFW0D670WX');
+        `}
+      </Script>
       <body
         className={classNames(
           "flex h-full flex-col bg-zinc-50 dark:bg-black",

@@ -43,34 +43,34 @@ export default function UsesPage() {
               single time, even under the incredibly heavy loads I put it
               through with our various launch simulations. */}
           </Tool>
-          <Tool title='38" LG UltraWide Monitor (38WN95C-W)'>
+          <Tool title='38" LG UltraWide monitor (38WN95C-W)'>
             IPS 3840x1600 resolution, 144Hz refresh rate, 1ms response time,
             Thunderbolt 3
             {/* The only display on the market if you want something HiDPI and
               bigger than 27”. When you’re working at planetary scale, every
               pixel you can get counts. */}
           </Tool>
-          <Tool title="Ergotron HX Desk Monitor Arm">
+          <Tool title="Ergotron HX desk monitor arm">
             {/* The only display on the market if you want something HiDPI and
               bigger than 27”. When you’re working at planetary scale, every
               pixel you can get counts. */}
           </Tool>
-          <Tool title="NovelKeys NK65 Keyboard">
+          <Tool title="NovelKeys NK65 keyboard">
             {/* They don’t make keyboards the way they used to. I buy these any
               time I see them go up for sale and keep them in storage in case I
               need parts or need to retire my main. */}
           </Tool>
-          <Tool title="Apple Magic Mouse">
+          <Tool title="Apple magic mouse">
             {/* Something about all the gestures makes me feel like a wizard with
               special powers. I really like feeling like a wizard with special
               powers. */}
           </Tool>
-          <Tool title="CalDigit TS4 Thunderbolt 4 Dock"></Tool>
-          <Tool title="Allsteel Chair">
+          <Tool title="CalDigit TS4 Thunderbolt 4 dock"></Tool>
+          <Tool title="Allsteel chair">
             {/* If I’m going to slouch in the worst ergonomic position imaginable
               all day, I might as well do it in an expensive chair. */}
           </Tool>
-          <Tool title="Butcher block, mechanical height adjustable">
+          <Tool title="Butcher block, mechanical height adjustable desk">
             {/* If I’m going to slouch in the worst ergonomic position imaginable
               all day, I might as well do it in an expensive chair. */}
           </Tool>
